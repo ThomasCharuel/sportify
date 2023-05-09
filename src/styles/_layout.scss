@@ -1,0 +1,7 @@
+@import './variables';
+
+.main {
+  margin-left: $vertical-navbar-width;
+  margin-top: $header-height;
+  padding: 4rem 6rem;
+}

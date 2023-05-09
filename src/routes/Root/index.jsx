@@ -7,11 +7,9 @@ import SecondaryNavigation from '../../components/SecondaryNavigation';
 function Root({ outlet }) {
   return (
     <>
+      <SecondaryNavigation />
       <PrimaryNavigation />
-      <>
-        <SecondaryNavigation />
-        {outlet ? outlet : <Outlet />}
-      </>
+      <main className="main">{outlet ? outlet : <Outlet />}</main>
     </>
   );
 }
