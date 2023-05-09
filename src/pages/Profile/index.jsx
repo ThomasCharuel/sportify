@@ -13,16 +13,16 @@ export default function Profile() {
           <p>Hello, {userProfile.userInfos.firstName}</p>
           <ul className={styles.statsListing}>
             <li>
-              <StatisticCard type={'calories'} value={'3'} />
+              <StatisticCard type={'calories'} value={userProfile.keyData.calorieCount} />
             </li>
             <li>
-              <StatisticCard type={'protein'} value={'3'} />
+              <StatisticCard type={'protein'} value={userProfile.keyData.proteinCount} />
             </li>
             <li>
-              <StatisticCard type={'carbs'} value={'3'} />
+              <StatisticCard type={'carbs'} value={userProfile.keyData.carbohydrateCount} />
             </li>
             <li>
-              <StatisticCard type={'fat'} value={'3'} />
+              <StatisticCard type={'fat'} value={userProfile.keyData.lipidCount} />
             </li>
           </ul>
         </>

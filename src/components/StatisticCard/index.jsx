@@ -44,7 +44,7 @@ function StatisticCard({ type, value }) {
       <img src={iconSource} />
       <div className={styles.statistic}>
         <p className={styles.statistic__value}>
-          {value}
+          {value.toLocaleString('en-US')}
           {statUnit}
         </p>
         <p className={styles.statistic__name}>{statName}</p>
@@ -55,7 +55,7 @@ function StatisticCard({ type, value }) {
 
 StatisticCard.propTypes = {
   type: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
+  value: PropTypes.number.isRequired,
 };
 
 export default StatisticCard;
