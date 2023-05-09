@@ -3,6 +3,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import Root from '../Root';
 import Error from '../../pages/Error';
 import Profile from '../../pages/Profile';
+import { profileLoader } from '../../loaders/ProfileLoader';
 
 export default createBrowserRouter([
   {
@@ -13,6 +14,7 @@ export default createBrowserRouter([
       {
         path: 'profile/:userId',
         element: <Profile />,
+        loader: profileLoader,
       },
       {
         path: 'error',
