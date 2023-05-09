@@ -1,0 +1,15 @@
+@import '../../styles/variables';
+
+.userGreetings {
+  font-size: 3rem;
+  font-weight: $font-weight-medium;
+  margin-bottom: 2rem;
+}
+
+.userName {
+  color: $color-primary;
+}
+
+.paragraph {
+  font-size: 1.1rem;
+}

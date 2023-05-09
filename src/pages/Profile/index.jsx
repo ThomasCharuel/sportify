@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import styles from './index.module.scss';
+import ProfileHeader from '../../components/ProfileHeader';
 import StatisticCard from '../../components/StatisticCard';
 
 export default function Profile() {
@@ -10,7 +11,7 @@ export default function Profile() {
     <div className={styles.profileContainer}>
       {userProfile && (
         <>
-          <p>Hello, {userProfile.userInfos.firstName}</p>
+          <ProfileHeader name={userProfile.userInfos.firstName} />
           <ul className={styles.statsListing}>
             <li>
               <StatisticCard type={'calories'} value={userProfile.keyData.calorieCount} />
