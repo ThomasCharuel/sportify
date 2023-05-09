@@ -13,19 +13,27 @@ export default function PrimaryNavigation() {
       <Link to="/">
         <img src={logo} alt="Logo Kasa" className={styles.header__logo} />
       </Link>
-      <nav className={styles.header__navigation}>
-        <ul>
+      <nav className={styles.navigation}>
+        <ul className={styles.navigation__listing}>
           <li>
-            <NavLink to="/">Accueil</NavLink>
+            <NavLink to="/" className={styles.navigation__link}>
+              Accueil
+            </NavLink>
           </li>
           <li>
-            <NavLink to={`/profile/${userId}`}>Profil</NavLink>
+            <NavLink to={`/profile/${userId}`} className={styles.navigation__link}>
+              Profil
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/">Réglage</NavLink>
+            <NavLink to="/" className={styles.navigation__link}>
+              Réglage
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/">Communauté</NavLink>
+            <NavLink to="/" className={styles.navigation__link}>
+              Communauté
+            </NavLink>
           </li>
         </ul>
       </nav>
