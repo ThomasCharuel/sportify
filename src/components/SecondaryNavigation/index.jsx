@@ -1,27 +1,41 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './index.module.scss';
+import iconZen from '../../assets/icon-zen.svg';
+import iconSwim from '../../assets/icon-swim.svg';
+import iconBike from '../../assets/icon-bike.svg';
+import iconWeightlifting from '../../assets/icon-weightlifting.svg';
 
 export default function SecondaryNavigation() {
   return (
-    <div>
-      <nav className={styles.header__navigation}>
-        <ul>
+    <div className={styles.sidebar}>
+      <nav className={styles.navigation}>
+        <ul className={styles.navigation__listing}>
           <li>
-            <NavLink to="/">Img 1</NavLink>
+            <NavLink to="/">
+              <img src={iconZen} />
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/">Img 2</NavLink>
+            <NavLink to="/">
+              <img src={iconSwim} />
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/">Img 3</NavLink>
+            <NavLink to="/">
+              <img src={iconBike} />
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/">Img 4</NavLink>
+            <NavLink to="/">
+              <img src={iconWeightlifting} />
+            </NavLink>
           </li>
         </ul>
       </nav>
-      <p>Copyright, SportSee 2020</p>
+      <div className={styles.copyright}>
+        <p className={styles.copyright__text}>Copyright, SportSee 2020</p>
+      </div>
     </div>
   );
 }
