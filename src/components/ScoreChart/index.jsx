@@ -1,15 +1,6 @@
-/* eslint-disable no-unused-vars */
 import React from 'react';
 import PropTypes from 'prop-types';
-import {
-  RadialBarChart,
-  RadialBar,
-  PolarAngleAxis,
-  PolarGrid,
-  Legend,
-  Tooltip,
-  CartesianGrid,
-} from 'recharts';
+import { RadialBarChart, RadialBar, PolarAngleAxis } from 'recharts';
 import styles from './index.module.scss';
 
 function ScoreChart({ score }) {
@@ -22,6 +13,7 @@ function ScoreChart({ score }) {
         height={250}
         innerRadius="90%"
         data={data}
+        // barGap={20}
         startAngle={90}
         endAngle={-270}
       >

@@ -1,1 +1,40 @@
 @import '../../styles/variables';
+
+.chart {
+  background-color: #fbfbfb;
+  border-radius: 5px;
+  position: relative;
+  padding: 2rem 2rem 3rem;
+
+  &__title {
+    font-weight: $font-weight-medium;
+    font-size: 1rem;
+    position: absolute;
+    top: 2.4rem;
+    left: 2rem;
+    color: #20253a;
+  }
+}
+
+.tooltip {
+  background-color: $color-primary;
+  padding: 1rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+
+  &__content {
+    font-weight: $font-weight-medium;
+    color: $color-white;
+    font-size: 0.6rem;
+  }
+}
+
+.legend__text {
+  margin-left: 0.4rem;
+  margin-right: 1rem;
+  color: #74798c;
+  font-weight: $font-weight-medium;
+  font-size: 0.9rem;
+}
