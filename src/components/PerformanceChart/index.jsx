@@ -1,15 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { RadarChart, Radar, PolarGrid, PolarAngleAxis, PolarRadiusAxis } from 'recharts';
-// import styles from './index.module.scss';
+import { RadarChart, Radar, PolarGrid, PolarAngleAxis } from 'recharts';
+import styles from './index.module.scss';
 
 function PerformanceChart({ performance }) {
+  const getTickLabel = (kind) => {
+    if (kind === 'cardio') return 'Cardio';
+    if (kind === 'energy') return 'Energie';
+    if (kind === 'endurance') return 'Endurance';
+    if (kind === 'strength') return 'Force';
+    if (kind === 'speed') return 'Vitesse';
+    if (kind === 'intensity') return 'Intensité';
+    return kind;
+  };
   return (
-    <RadarChart outerRadius={90} width={730} height={250} data={performance}>
-      <PolarGrid />
-      <PolarAngleAxis dataKey="kind" />
-      <PolarRadiusAxis angle={30} domain={[0, 150]} />
-      <Radar dataKey="value" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
+    <RadarChart
+      outerRadius={90}
+      width={730}
+      height={250}
+      data={performance}
+      className={styles.chart}
+    >
+      <PolarGrid radialLines={false} />
+      <PolarAngleAxis dataKey="kind" tickFormatter={getTickLabel} />
+      <Radar dataKey="value" fill="#FF0101" fillOpacity={0.7} />
     </RadarChart>
   );
 }

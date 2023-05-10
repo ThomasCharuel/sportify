@@ -25,8 +25,6 @@ const profileLoader = async ({ params }) => {
     performance,
   };
 
-  console.log(profile);
-
   return { profile };
 };
 
