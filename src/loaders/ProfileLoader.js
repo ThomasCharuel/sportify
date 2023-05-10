@@ -30,4 +30,4 @@ const profileLoader = async ({ params }) => {
   return { profile };
 };
 
-export default profileLoader;
+export { profileLoader };
