@@ -26,10 +26,4 @@ const getUserActivity = async (userId) => getRequest(`/user/${userId}/activity`)
 const getUserAverageSessions = async (userId) => getRequest(`/user/${userId}/average-sessions`);
 const getUserPerformance = async (userId) => getRequest(`/user/${userId}/performance`);
 
-export const getAllRequest = {
-  getUser,
-  getUserActivity,
-  getUserAverageSessions,
-  getUserPerformance,
-};
-export default getAllRequest;
+export { getUser, getUserActivity, getUserAverageSessions, getUserPerformance };
