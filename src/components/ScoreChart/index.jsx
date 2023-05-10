@@ -1,37 +1,60 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { RadialBarChart, RadialBar, Legend, Tooltip } from 'recharts';
-// import styles from './index.module.scss';
+import {
+  RadialBarChart,
+  RadialBar,
+  PolarAngleAxis,
+  PolarGrid,
+  Legend,
+  Tooltip,
+  CartesianGrid,
+} from 'recharts';
+import styles from './index.module.scss';
 
 function ScoreChart({ score }) {
   const data = [{ score }];
   return (
-    <RadialBarChart
-      width={730}
-      height={250}
-      innerRadius="10%"
-      outerRadius="80%"
-      data={data}
-      startAngle={180}
-      endAngle={0}
-    >
-      <RadialBar
-        minAngle={15}
-        label={{ fill: '#666', position: 'insideStart' }}
-        background
-        clockWise={true}
-        dataKey="score"
-      />
-      <Legend
-        iconSize={10}
-        width={120}
-        height={140}
-        layout="vertical"
-        verticalAlign="middle"
-        align="right"
-      />
-      <Tooltip />
-    </RadialBarChart>
+    <div className={styles.chart}>
+      <h2 className={styles.chart__title}>Score</h2>
+      <RadialBarChart
+        width={730}
+        height={250}
+        innerRadius="90%"
+        data={data}
+        startAngle={90}
+        endAngle={-270}
+      >
+        <PolarAngleAxis
+          axisLineType="circle"
+          type="number"
+          domain={[0, 1]}
+          tick={false}
+          style={{ fill: 'white' }}
+        />
+        <RadialBar dataKey="score" cornerRadius={50} fill="#FF0101" />
+        <text
+          x="50%"
+          y="50%"
+          style={{ fontSize: 26, fontWeight: 'bold', fill: '#282D30' }}
+          width={200}
+          textAnchor="middle"
+        >
+          {score * 100}%
+        </text>
+        <text
+          x="50%"
+          y="50%"
+          dy={30}
+          className={styles.greyText}
+          style={{ fontSize: 16, fontWeight: 500, fill: '#74798C' }}
+          width={200}
+          textAnchor="middle"
+        >
+          de votre objectif
+        </text>
+      </RadialBarChart>
+    </div>
   );
 }
 

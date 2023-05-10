@@ -47,7 +47,7 @@ function StatisticCard({ type, value }) {
           {value.toLocaleString('en-US')}
           {statUnit}
         </p>
-        <p className={styles.statistic__name}>{statName}</p>
+        <h2 className={styles.statistic__name}>{statName}</h2>
       </div>
     </article>
   );
