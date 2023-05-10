@@ -1,13 +1,15 @@
-import { get as getUser } from '../services/userService';
-import { get as getActivity } from '../services/activityService';
-import { get as getAverageSessions } from '../services/averageSessionsService';
-import { get as getPerformance } from '../services/performanceService';
+import {
+  getUser,
+  getUserActivity,
+  getUserAverageSessions,
+  getUserPerformance,
+} from '../_services/Api.Service';
 
-export async function profileLoader({ params }) {
+const profileLoader = async ({ params }) => {
   const userProfile = await getUser(params.userId);
-  const userActivity = await getActivity(params.userId);
-  const userAverageSessions = await getAverageSessions(params.userId);
-  const userPerformance = await getPerformance(params.userId);
+  const userActivity = await getUserActivity(params.userId);
+  const userAverageSessions = await getUserAverageSessions(params.userId);
+  const userPerformance = await getUserPerformance(params.userId);
 
   const performance = userPerformance.data.map((data) => ({
     value: data.value,
@@ -26,4 +28,6 @@ export async function profileLoader({ params }) {
   console.log(profile);
 
   return { profile };
-}
+};
+
+export default profileLoader;
