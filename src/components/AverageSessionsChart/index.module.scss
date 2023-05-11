@@ -1,1 +1,42 @@
 @import '../../styles/variables';
+
+.chart {
+  background-color: #ff0000;
+  overflow: hidden;
+  border-radius: 5px;
+  position: relative;
+  height: 300px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 30%;
+    background-color: $color-black;
+    opacity: 0.1;
+  }
+
+  &__title {
+    font-weight: $font-weight-medium;
+    font-size: 1rem;
+    position: absolute;
+    top: 2.4rem;
+    left: 2rem;
+    color: $color-white;
+    opacity: 0.5;
+    max-width: 9rem;
+  }
+}
+
+.tooltip {
+  background-color: $color-white;
+  padding: 0.7rem 0.5rem;
+
+  &__content {
+    font-weight: $font-weight-medium;
+    color: $color-black;
+    font-size: 0.6rem;
+  }
+}

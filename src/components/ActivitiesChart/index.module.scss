@@ -4,13 +4,14 @@
   background-color: #fbfbfb;
   border-radius: 5px;
   position: relative;
+  height: 300px;
   padding: 2rem 2rem 3rem;
 
   &__title {
     font-weight: $font-weight-medium;
     font-size: 1rem;
     position: absolute;
-    top: 2.4rem;
+    top: 2.3rem;
     left: 2rem;
     color: #20253a;
   }

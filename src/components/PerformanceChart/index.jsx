@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { RadarChart, Radar, PolarGrid, PolarAngleAxis } from 'recharts';
+import { ResponsiveContainer, RadarChart, Radar, PolarGrid, PolarAngleAxis } from 'recharts';
 import styles from './index.module.scss';
 
 function PerformanceChart({ performance }) {
@@ -14,17 +14,21 @@ function PerformanceChart({ performance }) {
     return kind;
   };
   return (
-    <RadarChart
-      outerRadius={90}
-      width={730}
-      height={250}
-      data={performance}
-      className={styles.chart}
-    >
-      <PolarGrid radialLines={false} />
-      <PolarAngleAxis dataKey="kind" tickFormatter={getTickLabel} />
-      <Radar dataKey="value" fill="#FF0101" fillOpacity={0.7} />
-    </RadarChart>
+    <div className={styles.chart}>
+      <ResponsiveContainer>
+        <RadarChart
+          outerRadius={90}
+          width={730}
+          height={250}
+          data={performance}
+          className={styles.chart}
+        >
+          <PolarGrid radialLines={false} />
+          <PolarAngleAxis dataKey="kind" tickFormatter={getTickLabel} />
+          <Radar dataKey="value" fill="#FF0101" fillOpacity={0.7} />
+        </RadarChart>
+      </ResponsiveContainer>
+    </div>
   );
 }
 
