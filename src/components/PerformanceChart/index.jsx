@@ -23,8 +23,12 @@ function PerformanceChart({ performance }) {
           data={performance}
           className={styles.chart}
         >
-          <PolarGrid radialLines={false} />
-          <PolarAngleAxis dataKey="kind" tickFormatter={getTickLabel} />
+          <PolarGrid radialLines={false} stroke="white" />
+          <PolarAngleAxis
+            dataKey="kind"
+            tickFormatter={getTickLabel}
+            tick={{ fill: 'white', fontSize: 12 }}
+          />
           <Radar dataKey="value" fill="#FF0101" fillOpacity={0.7} />
         </RadarChart>
       </ResponsiveContainer>

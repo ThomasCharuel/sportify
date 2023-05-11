@@ -1,7 +1,6 @@
-/* eslint-disable no-unused-vars */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ResponsiveContainer, LineChart, Line, XAxis, Tooltip, ReferenceArea } from 'recharts';
+import { ResponsiveContainer, LineChart, Line, XAxis, Tooltip } from 'recharts';
 import styles from './index.module.scss';
 
 const customToolTip = ({ active, payload }) => {
