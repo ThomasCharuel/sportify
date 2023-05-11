@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { RadialBarChart, RadialBar, PolarAngleAxis, ResponsiveContainer } from 'recharts';
 import styles from './index.module.scss';
 
-function ScoreChart({ score }) {
+function ScoreChart({ score = 0 }) {
   const data = [{ score }];
   return (
     <div className={styles.chart}>
@@ -14,7 +14,6 @@ function ScoreChart({ score }) {
           height={250}
           innerRadius="90%"
           data={data}
-          // barGap={20}
           startAngle={90}
           endAngle={-270}
         >
@@ -53,7 +52,7 @@ function ScoreChart({ score }) {
 }
 
 ScoreChart.propTypes = {
-  score: PropTypes.number.isRequired,
+  score: PropTypes.number,
 };
 
 export default ScoreChart;
