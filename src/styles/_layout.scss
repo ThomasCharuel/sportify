@@ -1,7 +1,11 @@
 @import './variables';
-
+@import './mixins';
 .main {
   margin-left: $vertical-navbar-width;
   margin-top: $header-height;
   padding: 4rem 6rem;
+
+  @include media-query-for-screen($xxl) {
+    padding: 2rem;
+  }
 }

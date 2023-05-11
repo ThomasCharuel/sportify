@@ -1,0 +1,6 @@
+// Responsive desktop first
+@mixin media-query-for-screen($screen) {
+  @media screen and (max-width: map-get($breakpoints, $screen)) {
+    @content;
+  }
+}

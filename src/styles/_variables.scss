@@ -17,3 +17,18 @@ $font-weight-bold: 700;
 // Sizes
 $header-height: 5rem;
 $vertical-navbar-width: 8rem;
+
+// Responsivity breakpoints
+$sm: 'sm';
+$md: 'md';
+$lg: 'lg';
+$xl: 'xl';
+$xxl: 'xxl';
+
+$breakpoints: (
+  $sm: 576px,
+  $md: 768px,
+  $lg: 992px,
+  $xl: 1200px,
+  $xxl: 1400px,
+);

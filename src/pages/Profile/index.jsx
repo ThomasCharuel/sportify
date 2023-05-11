@@ -17,25 +17,35 @@ export default function Profile() {
         <>
           <ProfileHeader name={profile.firstName} />
 
-          <ActivitiesChart activities={profile.activities} />
-          <AverageSessionsChart sessions={profile.sessions} />
-          <PerformanceChart performance={profile.performance} />
-          <ScoreChart score={profile.todayScore} />
+          <div className={styles.chartsWrapper}>
+            <div className={styles.activitiesChart}>
+              <ActivitiesChart activities={profile.activities} className={styles.activitiesChart} />
+            </div>
+            <div className={styles.averageSessionsChart}>
+              <AverageSessionsChart sessions={profile.sessions} />
+            </div>
+            <div className={styles.performanceChart}>
+              <PerformanceChart performance={profile.performance} />
+            </div>
+            <div className={styles.scoreChart}>
+              <ScoreChart score={profile.todayScore} />
+            </div>
 
-          <ul className={styles.statsListing}>
-            <li>
-              <StatisticCard type={'calories'} value={profile.keyData.calorieCount} />
-            </li>
-            <li>
-              <StatisticCard type={'protein'} value={profile.keyData.proteinCount} />
-            </li>
-            <li>
-              <StatisticCard type={'carbs'} value={profile.keyData.carbohydrateCount} />
-            </li>
-            <li>
-              <StatisticCard type={'fat'} value={profile.keyData.lipidCount} />
-            </li>
-          </ul>
+            <ul className={styles.statsListing}>
+              <li>
+                <StatisticCard type={'calories'} value={profile.keyData.calorieCount} />
+              </li>
+              <li>
+                <StatisticCard type={'protein'} value={profile.keyData.proteinCount} />
+              </li>
+              <li>
+                <StatisticCard type={'carbs'} value={profile.keyData.carbohydrateCount} />
+              </li>
+              <li>
+                <StatisticCard type={'fat'} value={profile.keyData.lipidCount} />
+              </li>
+            </ul>
+          </div>
         </>
       )}
     </div>
