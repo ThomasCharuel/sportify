@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ResponsiveContainer, LineChart, Line, XAxis, Tooltip } from 'recharts';
+import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, Tooltip } from 'recharts';
 import styles from './index.module.scss';
 
 const customToolTip = ({ active, payload }) => {
@@ -37,6 +37,12 @@ function AverageSessionsChart({ sessions }) {
               <stop offset="100%" stopColor="white" stopOpacity={1} />
             </linearGradient>
           </defs>
+          <YAxis
+            domain={([dataMin, dataMax]) => {
+              return [dataMin - 0.1 * dataMax, dataMax * 1.3];
+            }}
+            hide={true}
+          />
           <XAxis
             dataKey="day"
             tickLine={false}
