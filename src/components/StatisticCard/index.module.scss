@@ -1,12 +1,17 @@
 @import '../../styles/variables';
+@import '../../styles/mixins';
 
 .card {
   background-color: $background-color-data-card;
   border-radius: 5px;
-  width: 20rem;
   padding: 2rem;
   display: flex;
   gap: 1.5rem;
+
+  @include media-query-for-screen($xxl) {
+    padding: 0.8rem;
+    gap: 1rem;
+  }
 
   .statistic {
     display: flex;
@@ -23,6 +28,10 @@
       color: #74798c;
       font-size: 0.9rem;
       font-weight: $font-weight-medium;
+    }
+
+    @include media-query-for-screen($xxl) {
+      gap: 0.4rem;
     }
   }
 }
