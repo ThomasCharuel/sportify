@@ -3,16 +3,18 @@ import PropTypes from 'prop-types';
 import { ResponsiveContainer, RadarChart, Radar, PolarGrid, PolarAngleAxis } from 'recharts';
 import styles from './index.module.scss';
 
+const LABELS_MAP = {
+  cardio: 'Cardio',
+  energy: 'Energie',
+  endurance: 'Endurance',
+  strength: 'Force',
+  speed: 'Vitesse',
+  intensity: 'Intensité',
+};
+// Display proper names for labels
+const getTickLabel = (kind) => LABELS_MAP[kind] || kind;
+
 function PerformanceChart({ performance }) {
-  const getTickLabel = (kind) => {
-    if (kind === 'cardio') return 'Cardio';
-    if (kind === 'energy') return 'Energie';
-    if (kind === 'endurance') return 'Endurance';
-    if (kind === 'strength') return 'Force';
-    if (kind === 'speed') return 'Vitesse';
-    if (kind === 'intensity') return 'Intensité';
-    return kind;
-  };
   return (
     <div className={styles.chart}>
       <ResponsiveContainer>

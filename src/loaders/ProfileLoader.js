@@ -5,6 +5,11 @@ import {
   getUserPerformance,
 } from '../_services/Api.Service';
 
+/**
+ * Fetch data for profile page.
+ * @param { Object } params Route params
+ * @returns { Object } Fetched data
+ */
 const profileLoader = async ({ params }) => {
   try {
     // Get data

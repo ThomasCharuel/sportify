@@ -1,4 +1,4 @@
-// Define getters for API endpoints
+// Define getters for Mocked API endpoints
 const getUser = async (userId) => ({
   id: userId,
   userInfos: {
@@ -53,6 +53,7 @@ const getUserActivity = async (userId) => ({
     },
   ],
 });
+
 const getUserAverageSessions = async (userId) => ({
   userId: userId,
   sessions: [
@@ -86,6 +87,7 @@ const getUserAverageSessions = async (userId) => ({
     },
   ],
 });
+
 const getUserPerformance = async (userId) => ({
   userId: userId,
   kind: { 1: 'cardio', 2: 'energy', 3: 'endurance', 4: 'strength', 5: 'speed', 6: 'intensity' },

@@ -12,6 +12,7 @@ import {
 } from 'recharts';
 import styles from './index.module.scss';
 
+// Custom Tooltip for the chart
 const customToolTip = ({ active, payload }) => {
   return (
     active &&
@@ -25,11 +26,13 @@ const customToolTip = ({ active, payload }) => {
   );
 };
 
+// Custom legend text with styling
 const renderLegendText = (value) => {
   return <span className={styles.legend__text}>{value}</span>;
 };
 
 function ActivitiesChart({ activities }) {
+  // Format activities
   const data = activities.map((activity, index) => {
     return { ...activity, name: index + 1 };
   });

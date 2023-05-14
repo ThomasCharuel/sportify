@@ -6,6 +6,7 @@ import iconCarbs from '../../assets/icon-carbs.svg';
 import iconFat from '../../assets/icon-fat.svg';
 import styles from './index.module.scss';
 
+// Get displayed data based on statistic type
 const getCardInfosBasedOnType = (type) => {
   let iconSource,
     statName,

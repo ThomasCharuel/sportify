@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, Tooltip } from 'recharts';
 import styles from './index.module.scss';
 
+// Custom Tooltip for the chart
 const customToolTip = ({ active, payload }) => {
   return (
     active &&
@@ -16,10 +17,12 @@ const customToolTip = ({ active, payload }) => {
 };
 
 function AverageSessionsChart({ sessions }) {
+  // Format data for recharts components
   const days = ['L', 'M', 'M', 'J', 'V', 'S', 'D'];
   const data = sessions.map(({ sessionLength, day }) => {
     return { sessionLength, day: days[day - 1] };
   });
+
   return (
     <div className={styles.chart}>
       <h2 className={styles.chart__title}>Durée moyenne des sessions</h2>

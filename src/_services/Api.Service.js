@@ -2,12 +2,16 @@ import axios from 'axios';
 
 const API_BASE_URL = 'http://localhost:3000';
 
-// Create an isntance of Axios with a custom base URL
+// Create an instance of Axios with a custom base URL
 const axiosInstance = axios.create({
   baseURL: API_BASE_URL,
 });
 
-// Define the GET request function
+/**
+ * Send GET request using axios
+ * @param { String } endpoint Endpoint to reach (e.g. /user/:userId)
+ * @return { Promise }
+ */
 const getRequest = async (endpoint) => {
   return axiosInstance
     .get(endpoint)
